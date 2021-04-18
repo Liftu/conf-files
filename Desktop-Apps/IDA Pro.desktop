@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=7.0.0
+Name=IDA Pro
+Comment=Lunch IDA Pro
+Icon=/home/louis/Documents/Tools/Reverse/idaedu-7.5/appico64.png
+Exec=/home/louis/Documents/Tools/Reverse/idaedu-7.5/ida64
+Terminal=false
+Path=/home/louis/Documents/Tools/Reverse/idaedu-7.5
+Name[en_US]=IDA Pro

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Ghidra
+Comment=Launch Ghidra
+Icon=/opt/ghidra/Ghidra.png
+Exec=/opt/ghidra/ghidraRun
+Terminal=false
+Path=/opt/ghidra
