@@ -88,11 +88,6 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-#alias l='ls -CF'
-
-alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -114,19 +109,49 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# pip install --user git+git://github.com/powerline/powerline
-if [ -f $HOME/.local/lib/python3.9/site-packages/powerline/bindings/bash/powerline.sh ]; then
-	$HOME/.local/bin/powerline-daemon -q
-	POWERLINE_BASH_CONTINUATION=1
-	POWERLINE_BASH_SELECT=1
-	export PATH=$HOME/.local/bin:$PATH
-	source $HOME/.local/lib/python3.9/site-packages/powerline/bindings/bash/powerline.sh
-fi
+######################################
+##### Beginning of custom stuff ######
+######################################
 
-export EDITOR="/usr/bin/vi"
+######################################
+############# Aliases ################
+
+alias ll='ls -lh'
+alias la='ls -Ah'
+
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+#alias ghidra='gtk-launch ghidra'
+
+######################################
+####### Environment variables ########
+
+export EDITOR="/usr/bin/vim"
 
 export WORKON_HOME=~/.environments
 if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
 	source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+fi
+
+JDK_PATH="/usr/lib/jvm/jdk-15.0.1/bin"
+if [ -d $JDK_PATH ]; then
+	export PATH=$JDK_PATH:$PATH
+fi
+
+IDA_PATH=$HOME"/Documents/Tools/Reverse/idaedu-7.5/"
+if [ -d $IDA_PATH ]; then
+	export IDADIR=$IDA_PATH
+fi
+
+######################################
+############# Powerline ##############
+
+# pip install --user git+git://github.com/powerline/powerline
+if [ -f $(python -c 'import site; print(site.USER_SITE)')/powerline/bindings/bash/powerline.sh ]; then
+	$(python -c 'import site; print(site.USER_BASE)')/bin/powerline-daemon -q
+	POWERLINE_BASH_CONTINUATION=1
+	POWERLINE_BASH_SELECT=1
+	# For tmux ¯\_(ツ)_/¯
+	export PATH=$(python -c 'import site; print(site.USER_BASE)')/bin:$PATH
+	source $(python -c 'import site; print(site.USER_SITE)')/powerline/bindings/bash/powerline.sh
 fi
 
