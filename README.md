@@ -12,6 +12,13 @@ cp bashrc ~/.bashrc
 pip install --user git+git://github.com/powerline/powerline
 ```
 
+## Vim
+
+```bash
+sudo apt install vim-nox
+#cp vimrc ~/.vimrc
+```
+
 ## ipython
 
 ```bash
