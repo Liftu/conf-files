@@ -26,12 +26,45 @@
 
 - BigSur : https://github.com/Teraskull/bigsur-grub2-theme
 
-## Splash screen
+## Plymouth bootsplash
 
-- Plymouth : 
+### Setting things up
+
 ```bash
 sudo cp /etc/default/grub /etc/default/grub.bak
 sudo apt install plymouth plymouth-themes -y
 sudo sed 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/g' /etc/default/grub -i
 sudo update-grub2
 ```
+
+### Testing the currently installed theme
+
+```bash
+./test-plymouth
+```
+
+### "Computer brand" theme
+
+```bash
+sudo plymouth-set-default-theme -R bgrt
+```
+
+### Apple theme
+
+```bash
+git clone git@github.com:navisjayaseelan/apple-mac-plymouth.git
+sudo cp -r apple-mac-plymouth/apple-mac-plymouth/ /usr/share/plymouth/themes/
+sudo plymouth-set-default-theme -R apple-mac-plymouth
+```
+
+### Windoze themes
+
+- WindozeXP : https://www.pling.com/p/1202116/
+- Windoze95 : https://www.pling.com/p/1202357/
+
+```bash
+find ./ -name "*.png" -exec convert {} -scale 225% {} \;
+sudo cp -r ../ /usr/share/plymouth/themes/
+sudo plymouth-set-default-theme -R WindozeXX
+```
+
