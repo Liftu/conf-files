@@ -68,7 +68,7 @@ cd WindozeXP-1080-Plymouth-theme
 ### Windows95 theme
 
 ```bash
-https://github.com/Liftu/Windoze95-1080-Plymouth-theme.git
+git clone https://github.com/Liftu/Windoze95-1080-Plymouth-theme.git
 cd Windoze95-1080-Plymouth-theme
 ./install.sh
 ```
