@@ -1,11 +1,5 @@
 # Themes
 
-## Backups
-
-```bash
-sudo cp /etc/default/grub /etc/default/grub.bak
-```
-
 ## Gnome Shell
 
 - Orchis : https://github.com/vinceliuice/Orchis-theme
@@ -34,4 +28,10 @@ sudo cp /etc/default/grub /etc/default/grub.bak
 
 ## Splash screen
 
-- Plymouth : `sudo sed 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/g' /etc/default/grub -i`
+- Plymouth : 
+```bash
+sudo cp /etc/default/grub /etc/default/grub.bak
+sudo apt install plymouth plymouth-themes -y
+sudo sed 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/g' /etc/default/grub -i
+sudo update-grub2
+```
