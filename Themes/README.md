@@ -1,5 +1,11 @@
 # Themes
 
+## Backups
+
+```bash
+sudo cp /etc/default/grub /etc/default/grub.bak
+```
+
 ## Gnome Shell
 
 - Orchis : https://github.com/vinceliuice/Orchis-theme
@@ -26,3 +32,6 @@
 
 - BigSur : https://github.com/Teraskull/bigsur-grub2-theme
 
+## Splash screen
+
+- Plymouth : `sudo sed 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/g' /etc/default/grub -i`
