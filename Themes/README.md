@@ -69,11 +69,9 @@ cd WindozeXP-1080-Plymouth-theme
 
 #### Windoze95
 
-https://www.pling.com/p/1202357/
-
 ```bash
-find ./ -name "*.png" -exec convert {} -scale 140% {} \;
-sudo cp -r ../ /usr/share/plymouth/themes/
-sudo plymouth-set-default-theme -R Windoze95
+https://github.com/Liftu/Windoze95-1080-Plymouth-theme.git
+cd Windoze95-1080-Plymouth-theme
+./install.sh
 ```
 
