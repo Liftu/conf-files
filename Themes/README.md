@@ -52,19 +52,28 @@ sudo plymouth-set-default-theme -R bgrt
 ### Apple theme
 
 ```bash
-git clone git@github.com:navisjayaseelan/apple-mac-plymouth.git
+git clone https://github.com/navisjayaseelan/apple-mac-plymouth.git
 sudo cp -r apple-mac-plymouth/apple-mac-plymouth/ /usr/share/plymouth/themes/
 sudo plymouth-set-default-theme -R apple-mac-plymouth
 ```
 
 ### Windoze themes
 
-- WindozeXP : https://www.pling.com/p/1202116/
-- Windoze95 : https://www.pling.com/p/1202357/
+#### WindozeXP
 
 ```bash
-find ./ -name "*.png" -exec convert {} -scale 225% {} \;
+git clone https://github.com/Liftu/WindozeXP-1080-Plymouth-theme.git
+cd WindozeXP-1080-Plymouth-theme
+./install
+```
+
+#### Windoze95
+
+https://www.pling.com/p/1202357/
+
+```bash
+find ./ -name "*.png" -exec convert {} -scale 140% {} \;
 sudo cp -r ../ /usr/share/plymouth/themes/
-sudo plymouth-set-default-theme -R WindozeXX
+sudo plymouth-set-default-theme -R Windoze95
 ```
 

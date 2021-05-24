@@ -1,8 +1,8 @@
 #!/bin/bash
-#requires plymouth-x11 installed
-#sudo apt-get install plymouth-x11
+#requires plymouth- installed
+#sudo apt-get install plymouth
+
 TIME=8
-echo
 echo "Running $TIME-second test..."
 sudo plymouthd ; sudo plymouth --show-splash ; for ((I=0; I<$TIME; I++)); do sleep 1 ; sudo plymouth --update=test$I ; done ; sudo plymouth --quit
 exit
