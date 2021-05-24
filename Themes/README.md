@@ -57,9 +57,7 @@ sudo cp -r apple-mac-plymouth/apple-mac-plymouth/ /usr/share/plymouth/themes/
 sudo plymouth-set-default-theme -R apple-mac-plymouth
 ```
 
-### Windoze themes
-
-#### WindozeXP
+### WindowsXP theme
 
 ```bash
 git clone https://github.com/Liftu/WindozeXP-1080-Plymouth-theme.git
@@ -67,7 +65,7 @@ cd WindozeXP-1080-Plymouth-theme
 ./install.sh
 ```
 
-#### Windoze95
+### Windows95 theme
 
 ```bash
 https://github.com/Liftu/Windoze95-1080-Plymouth-theme.git
