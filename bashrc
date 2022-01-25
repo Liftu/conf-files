@@ -117,6 +117,7 @@ fi
 ############# Aliases ################
 
 alias ll='ls -lh'
+alias lla='ls -lAh'
 alias la='ls -Ah'
 
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
