@@ -88,6 +88,7 @@ else
 		echo "You can select a splash screen with (for example : \"sudo plymouth-set-default-theme -R apple-mac-plymouth\")."
 		echo "You may also want to install the Nvidia drivers with \"sudo apt install nvidia-detect nvidia-driver\"."
 		echo "Do not forget to generate a SSH private key with ssh-keygen and to edit git email address \"git config user.email \"a@b.c\"\" and/or \"git config --global user.email \"a@b.c\"\"."
+		echo "Add \"'PowerlineSymbols', \" to the beginning of the Editor:Font Family setting in VSCode".
 	fi
 fi
 
