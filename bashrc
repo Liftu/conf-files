@@ -146,7 +146,7 @@ fi
 ######################################
 ############# Powerline ##############
 
-# pip install --user git+git://github.com/powerline/powerline
+# Installed with : pip install --user git+git://github.com/powerline/powerline
 if [ -f $(python -c 'import site; print(site.USER_SITE)')/powerline/bindings/bash/powerline.sh ]; then
 	$(python -c 'import site; print(site.USER_BASE)')/bin/powerline-daemon -q
 	POWERLINE_BASH_CONTINUATION=1
@@ -155,4 +155,11 @@ if [ -f $(python -c 'import site; print(site.USER_SITE)')/powerline/bindings/bas
 	export PATH=$(python -c 'import site; print(site.USER_BASE)')/bin:$PATH
 	source $(python -c 'import site; print(site.USER_SITE)')/powerline/bindings/bash/powerline.sh
 fi
-
+# Installed with : apt install powerline fonts-powerline
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+	powerline-daemon -q
+	POWERLINE_BASH_CONTINUATION=1
+	POWERLINE_BASH_SELECT=1
+	# For tmux ¯\_(ツ)_/¯
+	source /usr/share/powerline/bindings/bash/powerline.sh
+fi

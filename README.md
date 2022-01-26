@@ -1,5 +1,11 @@
 # Personal conf files
 
+## Full install script
+
+```bash
+./full-install.sh
+```
+
 ## Bashrc
 
 ```bash
@@ -43,7 +49,6 @@ deb-src http://deb.debian.org/debian/ unstable main contrib non-free
 ## List of common additional apps to install
 
 - Audacity
-- Brave
 - Gimp
 - GParted
 - KeePass

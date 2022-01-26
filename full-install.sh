@@ -7,7 +7,7 @@ then
 fi
 
 read -p $'Have you upgraded your Debian to the latest unstable version yet ? (y/n)\n' upgraded
-if [ ${upgraded,,} y= "y" ]
+if [ ${upgraded,,} != "y" ]
 then
 	read -p $'Would you like to upgrade your Debian to the last unstable version ? (y/n)\n' upgrade
 	if [ ${upgrad,,} == "y" ]
@@ -27,7 +27,7 @@ else
 		set -o xtrace
 
 		# apt install
-		sudo apt install -y git tmux vim-nox python3-pip firmware-linux-nonfree firmware-misc-nonfree python3-nautilus python3-gi plymouth plymouth-themes -y
+		sudo apt install -y bash-completion git wget tmux vim-nox python3-pip fonts-powerline powerline firmware-linux-nonfree firmware-misc-nonfree python3-nautilus python3-gi plymouth plymouth-themes -y
 
 		# bashrc
 		cp ~/.bashrc ~/.bashrc.bak && cp ./bashrc ~/.bashrc
@@ -49,12 +49,13 @@ else
 		# Python
 		sudo ln -s `which python3` `dirname $(which python3)`/python
 		pip install ipython
-		pip install --user git+git://github.com/powerline/powerline
+		#pip install --user git+git://github.com/powerline/powerline
 		if [ -f ~/.ipython/profile_default/ipython_config.py ]
 		then
 			cp ~/.ipython/profile_default/ipython_config.py ~/.ipython/profile_default/ipython_config.py.bak
 		fi
-		cp ipython_config.py ~/.ipython/profile_default/ipython_config.py
+		#cp ipython_config.py ~/.ipython/profile_default/ipython_config.py
+		
 		
 		# Themes customization
 		mkdir git_repos && cd git_repos
@@ -66,6 +67,8 @@ else
 		git clone https://github.com/chr314/nautilus-copy-path
 		git clone https://github.com/Teraskull/bigsur-grub2-theme
 		cd Orchis-theme && sed s/"apt-get install"/"apt-get install -y"/g ./core.sh -i && ./install.sh
+		cp -r ./src/firefox/configuration/user.js ~/.mozilla/firefox/*.default-esr/
+		cp -r ./src/firefox/chrome/ ~/.mozilla/firefox/*.default-esr/
 		cd ../Tela-icon-theme && ./install.sh
 		cd ../Tela-circle-icon-theme && ./install.sh
 		cd ../Vimix-cursor && ./install.sh
@@ -80,9 +83,11 @@ else
 		git clone https://github.com/navisjayaseelan/apple-mac-plymouth.git
 		sudo cp -r apple-mac-plymouth/apple-mac-plymouth/ /usr/share/plymouth/themes/
 		set +o xtrace
-		echo "You can select a splash screen with (for example : \"sudo plymouth-set-default-theme -R apple-mac-plymouth\")."
 
+		echo "DONE !"
+		echo "You can select a splash screen with (for example : \"sudo plymouth-set-default-theme -R apple-mac-plymouth\")."
 		echo "You may also want to install the Nvidia drivers with \"sudo apt install nvidia-detect nvidia-driver\"."
+		echo "Do not forget to generate a SSH private key with ssh-keygen and to edit git email address \"git config user.email \"a@b.c\"\" and/or \"git config --global user.email \"a@b.c\"\"."
 	fi
 fi
 
